@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "format": "prettier --write .",
     "lint:format": "prettier --check .",
     "lint": "eslint packages/**",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "lint-staged": {
     "packages/**/*.{js,jsx,ts,tsx,json}": [
@@ -32,13 +32,13 @@
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@commitlint/cli": "^17.0.3",
-    "@storybook/addon-actions": "^7.0.0-alpha.24",
-    "@storybook/addon-essentials": "^7.0.0-alpha.24",
-    "@storybook/addon-interactions": "^7.0.0-alpha.24",
-    "@storybook/addon-links": "^7.0.0-alpha.24",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
     "@storybook/builder-vite": "^0.2.2",
-    "@storybook/react": "^7.0.0-alpha.24",
-    "@storybook/testing-library": "^0.0.14-next.0",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.17",
     "@typescript-eslint/eslint-plugin": "^5.34.0",
     "@typescript-eslint/parser": "^5.34.0",
