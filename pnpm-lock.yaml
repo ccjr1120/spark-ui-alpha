@@ -53,10 +53,7 @@ importers:
       prettier: 2.7.1
       typescript: 4.7.4
 
-  packages/components:
-    specifiers: {}
-
-  packages/docs:
+  docs:
     specifiers:
       '@babel/core': ^7.18.13
       '@storybook/addon-actions': ^6.5.10
@@ -79,6 +76,9 @@ importers:
       '@storybook/testing-library': 0.0.13_sfoxds7t5ydpegc3knd667wn6m
       babel-loader: 8.2.5_tb6moc662p5idmcg3l5ipbhpta
       vite: 3.0.9
+
+  packages/components:
+    specifiers: {}
 
 packages:
 
