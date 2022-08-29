@@ -1,9 +1,11 @@
 import './index.module.css';
+import ButtonProps from './interface';
 
-function Button() {
+function Button(props: ButtonProps) {
+  const { label, children } = props;
   return (
     <button type="button" className="test">
-      button
+      {label || children}
     </button>
   );
 }
