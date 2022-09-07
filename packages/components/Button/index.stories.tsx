@@ -18,4 +18,6 @@ function Template(args) {
 
 export const Normal = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Normal.args = {};
+Normal.args = {
+  children: 'Button',
+};

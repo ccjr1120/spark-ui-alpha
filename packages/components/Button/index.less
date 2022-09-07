@@ -1,21 +1,48 @@
-@import '../node_modules/@spark-ui/theme-chalk/common/var.less';
+@import '../node_modules/@spark-ui/theme-chalk/styles/var.less';
+@var-prefix: --spark-button;
 
 .spark-button {
-  font-size: @font-md;
-  padding: 8px 14px;
+  @{var-prefix}-bg-color: @primary-color;
+  @{var-prefix}-border-color: @primary-color;
+  @{var-prefix}-text-color: @color-white;
+  @{var-prefix}-hover-bg-color: @primary-color-light;
+  @{var-prefix}-hover-border-color: @primary-color-light;
+  @{var-prefix}-hover-text-color: @color-white;
+  @{var-prefix}-active-bg-color: @primary-color-dark;
+  @{var-prefix}-active-border-color: @primary-color-dark;
+  @{var-prefix}-active-text-color: @color-white;
+}
+
+.spark-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--spark-button-text-color);
+  background: var(--spark-button-bg-color);
+  border: 1px solid var(--spark-button-border-color);
+  font-size: @font-base;
+  height: 32px;
+  padding: 0 14px;
   box-sizing: border-box;
   cursor: pointer;
   border-radius: 4px;
-  border: none;
-  color: @text-color;
-  background: @primary-color;
+  &:hover {
+    background: var(--spark-button-hover-bg-color);
+    border-color: var(--spark-button-hover-border-color);
+  }
+  &:active {
+    background: var(--spark-button-active-bg-color);
+    border-color: var(--spark-button-active-border-color);
+  }
 }
 .spark-button--small {
+  height: 24px;
   font-size: @font-sm;
-  padding: 6px 8px;
+  padding: 0px 8px;
 }
 
 .spark-button--large {
+  height: 40px;
   font-size: @font-lg;
-  padding: 10px 20px;
+  padding: 0px 20px;
 }
