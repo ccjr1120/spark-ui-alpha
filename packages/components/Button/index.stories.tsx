@@ -6,8 +6,21 @@ export default {
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    children: { control: 'text' },
-    size: { control: 'radio', options: ['small', 'default', 'large'] },
+    size: {
+      control: 'select',
+      options: ['small', 'default', 'large'],
+      defaultValue: 'default',
+    },
+    type: {
+      control: 'select',
+      options: ['default', 'plain', 'round', 'circle'],
+      defaultValue: 'default',
+    },
+    children: {
+      control: 'text',
+      defaultValue: 'Button',
+    },
+    color: { control: 'color', table: { category: 'custom' } },
   },
 };
 
@@ -18,6 +31,4 @@ function Template(args) {
 
 export const Normal = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Normal.args = {
-  children: 'Button',
-};
+Normal.args = {};
