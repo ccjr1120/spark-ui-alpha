@@ -19,5 +19,6 @@ export const useNamespace = (block: string) => {
   const m = (modifier?: string) => _bem(block, '', modifier);
   const bem = (element?: string, modifier?: string) =>
     _bem(block, element, modifier);
-  return { b, e, m, bem };
+  const is = (stateName: string) => `is-${stateName}`;
+  return { b, e, m, bem, is };
 };

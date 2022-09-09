@@ -1,16 +1,17 @@
 @import '../node_modules/@spark-ui/theme-chalk/styles/var.less';
+@class-prefix: spark-button;
 @var-prefix: --spark-button;
 
 .spark-button {
-  @{var-prefix}-bg-color: @primary-color;
-  @{var-prefix}-border-color: @primary-color;
-  @{var-prefix}-text-color: @color-white;
-  @{var-prefix}-hover-bg-color: @primary-color-light;
-  @{var-prefix}-hover-border-color: @primary-color-light;
-  @{var-prefix}-hover-text-color: @color-white;
-  @{var-prefix}-active-bg-color: @primary-color-dark;
-  @{var-prefix}-active-border-color: @primary-color-dark;
-  @{var-prefix}-active-text-color: @color-white;
+  @{var-prefix}-bg-color: @color-white;
+  @{var-prefix}-border-color: @border-color;
+  @{var-prefix}-text-color: @color-black;
+  @{var-prefix}-hover-bg-color: @primary-color-light-5;
+  @{var-prefix}-hover-border-color: @primary-color-light-3;
+  @{var-prefix}-hover-text-color: @primary-color;
+  @{var-prefix}-active-bg-color: @primary-color-light-5;
+  @{var-prefix}-active-border-color: @primary-color;
+  @{var-prefix}-active-text-color: @primary-color;
 }
 
 .spark-button {
@@ -19,7 +20,7 @@
   align-items: center;
   color: var(--spark-button-text-color);
   background: var(--spark-button-bg-color);
-  border: 1px solid var(--spark-button-border-color);
+  border: @border-width @border-style var(--spark-button-border-color);
   font-size: @font-base;
   height: 32px;
   padding: 0 14px;
@@ -27,22 +28,33 @@
   cursor: pointer;
   border-radius: 4px;
   &:hover {
+    color: var(--spark-button-hover-text-color);
     background: var(--spark-button-hover-bg-color);
     border-color: var(--spark-button-hover-border-color);
   }
   &:active {
+    color: var(--spark-button-active-text-color);
     background: var(--spark-button-active-bg-color);
     border-color: var(--spark-button-active-border-color);
   }
-}
-.spark-button--small {
-  height: 24px;
-  font-size: @font-sm;
-  padding: 0px 8px;
-}
-
-.spark-button--large {
-  height: 40px;
-  font-size: @font-lg;
-  padding: 0px 20px;
+  &.is-large {
+    height: 40px;
+    font-size: @font-lg;
+    padding: 0px 20px;
+  }
+  &.is-small {
+    height: 24px;
+    font-size: @font-sm;
+    padding: 0px 8px;
+  }
+  &.is-plain {
+    @{var-prefix}-bg-color: @primary-color-light-5;
+    @{var-prefix}-text-color: @primary-color;
+    @{var-prefix}-border-color: @primary-color-light-3;
+  }
+  &.is-decorated {
+  }
+  &.is-text {
+    border: 0;
+  }
 }
