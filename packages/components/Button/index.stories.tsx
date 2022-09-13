@@ -6,15 +6,15 @@ export default {
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    size: {
+    type: {
       control: 'select',
-      options: ['small', 'default', 'large'],
+      options: ['default', 'plain', 'text'],
       defaultValue: 'default',
       table: { category: 'base' },
     },
-    type: {
+    size: {
       control: 'select',
-      options: ['default', 'plain', 'decorated', 'text'],
+      options: ['small', 'default', 'large'],
       defaultValue: 'default',
       table: { category: 'base' },
     },
@@ -23,7 +23,7 @@ export default {
       defaultValue: 'Button',
       table: { category: 'base' },
     },
-    color: { control: 'color', table: { category: 'custom' } },
+    // color: { control: 'color', table: { category: 'custom' } },
   },
 };
 

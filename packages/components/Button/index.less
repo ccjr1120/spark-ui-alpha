@@ -3,15 +3,15 @@
 @var-prefix: --spark-button;
 
 .spark-button {
-  @{var-prefix}-bg-color: @color-white;
-  @{var-prefix}-border-color: @border-color;
-  @{var-prefix}-text-color: @color-black;
-  @{var-prefix}-hover-bg-color: @primary-color-light-5;
-  @{var-prefix}-hover-border-color: @primary-color-light-3;
-  @{var-prefix}-hover-text-color: @primary-color;
-  @{var-prefix}-active-bg-color: @primary-color-light-5;
-  @{var-prefix}-active-border-color: @primary-color;
-  @{var-prefix}-active-text-color: @primary-color;
+  @{var-prefix}-bg-color: @primary-color;
+  @{var-prefix}-border-color: @primary-color;
+  @{var-prefix}-text-color: @color-white;
+  @{var-prefix}-hover-bg-color: @primary-color-light-1;
+  @{var-prefix}-hover-border-color: @primary-color-light-1;
+  @{var-prefix}-hover-text-color: @color-white;
+  @{var-prefix}-active-bg-color: @primary-color-dark-1;
+  @{var-prefix}-active-border-color: @primary-color-dark-1;
+  @{var-prefix}-active-text-color: @color-white;
 }
 
 .spark-button {
@@ -26,7 +26,7 @@
   padding: 0 14px;
   box-sizing: border-box;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: @border-radius-base;
   &:hover {
     color: var(--spark-button-hover-text-color);
     background: var(--spark-button-hover-bg-color);
@@ -48,13 +48,22 @@
     padding: 0px 8px;
   }
   &.is-plain {
-    @{var-prefix}-bg-color: @primary-color-light-5;
+    @{var-prefix}-bg-color: @primary-color-light-7;
     @{var-prefix}-text-color: @primary-color;
-    @{var-prefix}-border-color: @primary-color-light-3;
-  }
-  &.is-decorated {
+    @{var-prefix}-border-color: @primary-color-light-5;
+    @{var-prefix}-hover-bg-color: @primary-color;
+    @{var-prefix}-hover-border-color: @primary-color;
+    @{var-prefix}-hover-text-color: @color-white;
   }
   &.is-text {
-    border: 0;
+    @{var-prefix}-bg-color: inherit;
+    @{var-prefix}-text-color: @primary-color;
+    @{var-prefix}-hover-bg-color: @primary-color-light-7;
+    @{var-prefix}-hover-border-color: @primary-color;
+    @{var-prefix}-hover-text-color: @primary-color;
+    @{var-prefix}-active-bg-color: @primary-color-light-5;
+    @{var-prefix}-active-border-color: @primary-color-light-5;
+    @{var-prefix}-active-text-color: @primary-color;
+    border-color: transparent;
   }
 }
