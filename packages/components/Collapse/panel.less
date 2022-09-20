@@ -1,0 +1,25 @@
+@import '../node_modules/@spark-ui/theme-chalk/styles/var.less';
+
+.spark-collapse-panel {
+}
+
+.spark-collapse-panel__header {
+  cursor: pointer;
+  padding: 10px 0;
+  margin-bottom: 9px;
+  border-bottom: @border;
+  &.is-active {
+    border-bottom-color: transparent;
+  }
+}
+.spark-collapse-panel__content {
+  overflow: hidden;
+  padding: 0px 12px 20px;
+  max-height: 0px;
+  transition: 1s;
+  will-change: height;
+  &.is-active {
+    max-height: 70px;
+    border-bottom: @border;
+  }
+}
