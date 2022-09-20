@@ -1,1 +1,1 @@
-{"v":3,"stories":{"components-button--normal":{"id":"components-button--normal","title":"Components/Button","name":"Normal","importPath":"../packages/components/Button/index.stories.tsx"}}}
+{"v":3,"stories":{"components-button--normal":{"id":"components-button--normal","title":"Components/Button","name":"Normal","importPath":"../packages/components/Button/index.stories.tsx"},"components-collapse--normal":{"id":"components-collapse--normal","title":"Components/Collapse","name":"Normal","importPath":"../packages/components/Collapse/index.stories.tsx"}}}
