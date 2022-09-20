@@ -22,7 +22,7 @@ export const useNamespace = (block: string) => {
     _bem(block, element, modifier);
   const useIs = (stateName: string, state?: boolean) =>
     useCallback(() => {
-      if (state === null || state) {
+      if (state === undefined || state) {
         return `is-${stateName}`;
       }
       return '';
