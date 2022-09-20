@@ -1,3 +1,5 @@
+const { mergeConfig } = require('vite');
+
 module.exports = {
   stories: ['../../packages/components/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -11,5 +13,8 @@ module.exports = {
   },
   features: {
     storyStoreV7: true,
+  },
+  async viteFinal(config) {
+    return mergeConfig(config, { base: '/spark-ui/' });
   },
 };
