@@ -7,11 +7,13 @@ import CollapseContext from './CollapseContext';
 
 function Collapse(props: CollapseProps) {
   const { children, value, onChange } = props;
+
   const ns = useNamespace('collapse');
   const clsNames = useClassName([ns.b()]);
   const contextValues = useMemo(
     () => ({
-      value,
+      sourceValue: value,
+      inlineValue: Array.isArray(value) ? value : [value],
       onChange,
     }),
     [value, onChange]
