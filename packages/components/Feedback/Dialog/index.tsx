@@ -2,7 +2,7 @@ import { useNamespace } from '@spark-ui/hooks';
 import { createPortal } from 'react-dom';
 import DialogProps from './interface';
 import './index.less';
-import Button from '../Button';
+import Button from '../../Base/Button';
 
 function Dialog(props: DialogProps) {
   const {
