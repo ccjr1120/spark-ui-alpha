@@ -16,6 +16,7 @@
     "@ctrl/tinycolor": "^3.4.1",
     "@spark-ui/hooks": "workspace:*",
     "@spark-ui/theme-chalk": "workspace:*",
-    "chroma-js": "^2.4.2"
+    "chroma-js": "^2.4.2",
+    "prop-types": "^15.8.1"
   }
 }

@@ -1,0 +1,41 @@
+@import '../node_modules/@spark-ui/theme-chalk/styles/var.less';
+
+@var-prefix: --spark-dialog;
+
+.spark-dialog {
+  @{var-prefix}-bg-color: @overlay-color;
+  @{var-prefix}-width: 30%;
+  @{var-prefix}-margin-top: 15vh;
+  @{var-prefix}-padding-primary: 20px;
+}
+.spark-dialog--root {
+  z-index: 2001;
+  position: fixed;
+  inset: 0;
+  background: var(--spark-dialog-bg-color);
+  height: 100%;
+  overflow: auto;
+}
+.spark-dialog--wrap {
+  width: 30%;
+  background: #fff;
+  margin: var(--spark-dialog-margin-top, 15vh) auto 50px;
+}
+
+.spark-dialog__header {
+  padding: var(--spark-dialog-padding-primary);
+  padding-bottom: 10px;
+}
+
+.spark-dialog__content {
+  padding: var(--spark-dialog-padding-primary);
+}
+.spark-dialog__footer {
+  padding: var(--spark-dialog-padding-primary);
+  padding-top: 10px;
+  text-align: right;
+}
+
+.dialog-footer {
+  text-align: right;
+}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Collapse, { Panel } from './index';
 
 export default {
-  title: 'Components/Collapse',
+  title: 'Display/Collapse',
   component: Collapse,
   argTypes: {
     type: {
