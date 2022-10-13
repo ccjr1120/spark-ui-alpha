@@ -1,0 +1,35 @@
+@import '../../node_modules/@spark-ui/theme-chalk/styles/var.less';
+
+.spark-input {
+  --spark-input-bg-color: @color-white;
+  --spark-input-overtype-border-color: @primary-color;
+}
+.spark-input {
+  width: 25ch;
+  margin: 0.4rem;
+  background: var(--spark-input-bg-color);
+  color: #333;
+}
+
+.spark-input-base {
+  width: 100%;
+  padding: 12px;
+  margin: 0;
+  background: inherit;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.spark-input-adornment {
+  border-radius: 4px;
+  border: @border;
+  display: flex;
+  align-items: center;
+  &:hover {
+    border-color: var(--spark-input-overtype-border-color);
+  }
+  &.is-focus {
+    border-color: var(--spark-input-overtype-border-color);
+  }
+}
