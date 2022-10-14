@@ -1,7 +1,7 @@
 import { useClassName, useNamespace } from '@spark-ui/hooks';
 import { useFormControl } from '../FormController';
-import './index.less';
 import { InputAdornmentProps } from './interface';
+import './index.less';
 
 function InputAdornment({ children, ...others }: InputAdornmentProps) {
   const ns = useNamespace('input-adornment');
