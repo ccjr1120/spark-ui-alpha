@@ -1,7 +1,7 @@
 import { useNamespace } from '@spark-ui/hooks';
 import { useFormControl } from '../FormController';
-import './index.less';
 import { InputBaseProps } from './interface';
+import './index.less';
 
 function InputBase(props: InputBaseProps) {
   const ns = useNamespace('input-base');

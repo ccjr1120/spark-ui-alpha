@@ -1,0 +1,21 @@
+@import '../../../../node_modules/@spark-ui/theme-chalk/styles/var.less';
+
+.spark-date-pickers-item {
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  transition: 200ms;
+  height: 49px;
+  line-height: 49px;
+  &:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+  &.is-today {
+    border: 1px solid #666;
+  }
+  &.is-active {
+    background-color: @primary-color !important;
+    color: @color-white;
+    border: none;
+  }
+}

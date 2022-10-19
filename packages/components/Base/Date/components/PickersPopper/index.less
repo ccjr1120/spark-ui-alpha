@@ -1,0 +1,18 @@
+.spark-pickers-popper {
+  z-index: 1333;
+  position: absolute;
+  // 一开始不要出现在界面上
+  // top: ${position.top || -1000}px;
+  // left: ${position.left || -1000}px;
+  // transform: translate3d(-50%, 0, 0)
+  //   translateY(
+  //     ${direction === 'bottom'
+  //       ? '0'
+  //       : `calc(-100% - ${position.height}px - 2px)`}
+  //   );
+  margin: 0px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -3px,
+    rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px;
+}

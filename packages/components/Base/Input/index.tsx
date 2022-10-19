@@ -1,11 +1,12 @@
 import { useNamespace } from '@spark-ui/hooks';
+import { forwardRef } from 'react';
 import InputBase from './InputBase';
 import FormController, { FormLabel, FormHelperText } from '../FormController';
 import InputAdornment from './InputAdornment';
 import InputProps from './interface';
 import './index.less';
 
-function Input(props: InputProps) {
+const Input = forwardRef((props: InputProps, ref) => {
   const {
     label,
     placeholder,
@@ -28,7 +29,7 @@ function Input(props: InputProps) {
       }}
     >
       {label && <FormLabel>{label}</FormLabel>}
-      <InputAdornment>
+      <InputAdornment ref={ref}>
         {startAdornment}
         <InputBase {...{ value, onChange, placeholder }} />
         {endAdornment}
@@ -36,6 +37,8 @@ function Input(props: InputProps) {
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormController>
   );
-}
+});
+
+Input.displayName = 'Input';
 
 export default Input;
