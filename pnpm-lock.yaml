@@ -66,7 +66,10 @@ importers:
       '@storybook/react': ^6.5.12
       '@storybook/testing-library': ^0.0.13
       babel-loader: ^8.2.5
+      dayjs: ^1.11.5
       vite: ^3.0.9
+    dependencies:
+      dayjs: 1.11.5
     devDependencies:
       '@babel/core': 7.18.13
       '@storybook/addon-actions': 6.5.12_sfoxds7t5ydpegc3knd667wn6m
@@ -1684,7 +1687,7 @@ packages:
       '@types/node': 18.7.12
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 2.0.2_7l3wjkagabjo35wefa372echlm
+      cosmiconfig-typescript-loader: 2.0.2_ltehpbsi6aiznrb235chbrukmm
       lodash: 4.17.21
       resolve-from: 5.0.0
       typescript: 4.7.4
@@ -5851,11 +5854,12 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
-  /cosmiconfig-typescript-loader/2.0.2_7l3wjkagabjo35wefa372echlm:
+  /cosmiconfig-typescript-loader/2.0.2_ltehpbsi6aiznrb235chbrukmm:
     resolution: {integrity: sha512-KmE+bMjWMXJbkWCeY4FJX/npHuZPNr9XF9q9CIQ/bpFwi1qHfCmSiKarrCcRa0LO4fWjk93pVoeRtJAkTGcYNw==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@types/node': '*'
+      cosmiconfig: '>=7'
       typescript: '>=3'
     dependencies:
       '@types/node': 18.7.12
