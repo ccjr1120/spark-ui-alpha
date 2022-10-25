@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs/esm/index'
 import { useEffect, useState } from 'react';
 import Wrapper from '../components/Wrapper';
 import CalendarOrClockPicker from '../components/CalendarOrClockPicker';

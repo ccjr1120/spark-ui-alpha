@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs/esm/index'
 import Wrapper from '../components/Wrapper';
 import CalendarOrClockPicker from '../components/CalendarOrClockPicker';
 import KeyboardDateInput from '../components/KeyboardDateInput';

@@ -1,6 +1,6 @@
 import useToggle from 'hooks/useToggle';
 import { useMemo, useState } from 'react';
-import dayjs from 'dayjs';
+import dayjs from 'dayjs/esm/index';
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 import Wrapper from '../components/Wrapper';
