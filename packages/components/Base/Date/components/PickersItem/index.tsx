@@ -1,5 +1,5 @@
 import { useClassName, useNamespace } from '@spark-ui/hooks';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs/esm/index';
 import { PickersItemProps } from './interface';
 import './index.less';
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs/esm/index';
 import { useMemo, useState } from 'react';
 
 const chsMonth = [

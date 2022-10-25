@@ -1,4 +1,4 @@
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs/esm/index';
 import { useMemo } from 'react';
 import { times } from 'lodash';
 import { useNamespace } from '@spark-ui/hooks';

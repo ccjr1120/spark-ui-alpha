@@ -1,5 +1,5 @@
 import { useNamespace } from '@spark-ui/hooks';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs/esm/index';
 import { DateRangePickerItemProps } from './interface';
 
 function DateRangePickerItem(props: DateRangePickerItemProps) {
