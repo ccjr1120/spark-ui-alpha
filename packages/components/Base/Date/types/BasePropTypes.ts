@@ -1,16 +1,16 @@
-import PropTypes from 'prop-types';
+import { ReactNode } from 'react';
 
 type BasePropTypes = {
-  label: PropTypes.string;
-  className: PropTypes.string;
-  clearable: PropTypes.bool;
-  disabled: PropTypes.bool;
-  autoFocus: PropTypes.bool;
-  value: PropTypes.string;
-  valueFormat: PropTypes.string;
-  onChange: PropTypes.func;
+  label: string;
+  className: string;
+  clearable: boolean;
+  disabled: boolean;
+  autoFocus: boolean;
+  value: string;
+  valueFormat: string;
+  onChange: Function;
   views: Array<string>;
-  renderInput: PropTypes.node;
+  renderInput: ReactNode;
 };
 
 export default BasePropTypes;

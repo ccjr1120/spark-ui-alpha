@@ -1,24 +1,24 @@
-import PropTypes from 'prop-types';
+import { ReactNode } from 'react';
 
 type InputProps = {
-  label?: PropTypes.string;
-  placeholder?: PropTypes.string;
-  isError?: PropTypes.bool;
-  helperText?: PropTypes.string;
-  value?: PropTypes.string;
-  onChange?: PropTypes.func;
-  startAdornment?: PropTypes.node;
-  endAdornment?: PropTypes.node;
+  label?: string;
+  placeholder?: string;
+  isError?: boolean;
+  helperText?: string;
+  value?: string;
+  onChange?: Function;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
 };
 
 type InputBaseProps = {
   value: string | number;
-  onChange?: PropTypes.func;
-  placeholder?: PropTypes.string;
+  onChange?: Function;
+  placeholder?: string;
 };
 
 type InputAdornmentProps = {
-  children: PropTypes.node;
+  children: ReactNode;
 };
 export { InputBaseProps, InputAdornmentProps };
 

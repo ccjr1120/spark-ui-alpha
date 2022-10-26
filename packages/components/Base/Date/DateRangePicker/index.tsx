@@ -80,9 +80,9 @@ function DateRangePicker(props) {
 
 DateRangePicker.propTypes = {
   ...BasePropTypes,
-  view: PropTypes.string,
-  calendars: PropTypes.number,
-  value: PropTypes.arrayOf(PropTypes.string),
+  view: string,
+  calendars: number,
+  value: PropTypes.arrayOf(string),
 };
 
 export default DateRangePicker;

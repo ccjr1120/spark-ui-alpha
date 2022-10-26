@@ -2,6 +2,7 @@ import { isNaN } from 'lodash';
 import { useNamespace } from '@spark-ui/hooks';
 import useClockCalc from './useClockCalc';
 import { ClockProps } from './interface';
+import React, { Children, cloneElement } from 'react';
 
 // 获取指针旋转角度
 const getRotateAngel = (view, value) =>
@@ -15,7 +16,7 @@ const getNthChildNumber = (view, value) => {
 };
 // 获取指针指向位置的中心点颜色
 const getInnerPointColor = (view, value) =>
-  view !== 'hour' && value % 5 !== 0 ? 'white' : 'blue';
+  view !== 'hour' && value % 5 !== 0 ? 'white' : 'var(--spark-clock-pointer-color)';
 
 function Clock(props: ClockProps) {
   const { type, value, children, onChange } = props;
@@ -56,9 +57,8 @@ function Clock(props: ClockProps) {
         className={ns.e('pointer')}
         style={{
           opacity: !isNaN(value) ? 1 : 0,
-          height: `${
-            ((clockWidth - clockHourWidth - 2) / 2) * (isInner ? innerScale : 1)
-          }px`,
+          height: `${((clockWidth - clockHourWidth - 2) / 2) * (isInner ? innerScale : 1)
+            }px`,
           transform: `rotateZ(${getRotateAngel(type, value)}deg)`,
         }}
       >
@@ -67,7 +67,7 @@ function Clock(props: ClockProps) {
           style={{
             top: `${-clockHourWidth / 2}px`,
             left: `calc(50% - ${clockHourWidth / 2}px)`,
-            border: `${clockHourWidth / 2 - 2}px solid blue`,
+            border: `${clockHourWidth / 2 - 2}px solid var(--spark-clock-pointer-color)`,
             background: getInnerPointColor(type, value),
           }}
         />
@@ -81,7 +81,7 @@ function Clock(props: ClockProps) {
         // `}
         style={{ width: '100%' }}
       >
-        {children}
+        {Children.toArray(children).map((item, i) => cloneElement(item, 1))}
       </div>
     </div>
   );

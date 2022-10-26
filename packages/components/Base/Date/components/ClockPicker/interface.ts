@@ -1,22 +1,22 @@
-import { PropTypes } from 'prop-types';
+import { ReactNode } from "react";
 
 interface ClockPickerProps {
-  view: PropTypes.string;
+  view: string;
   views: Array<string>;
   date: any;
-  onChange: PropTypes.func;
-  onViewChange: PropTypes.func;
+  onChange: Function;
+  onViewChange: Function;
 }
 interface ClockProps {
-  type: PropTypes.string;
-  value: PropTypes.number;
-  onChange: PropTypes.func;
-  children: PropTypes.node;
+  type: string;
+  value: number;
+  onChange: Function;
+  children: ReactNode;
 }
 
 interface ClockNumberProps {
-  index: PropTypes.number;
+  index: number;
   label: string | number;
-  inner?: PropTypes.bool;
+  inner?: boolean;
 }
 export { ClockPickerProps, ClockProps, ClockNumberProps };

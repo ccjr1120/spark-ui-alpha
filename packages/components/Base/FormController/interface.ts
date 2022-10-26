@@ -1,16 +1,16 @@
-import PropTypes from 'prop-types';
+import { ReactNode } from 'react';
 
 type FormControllerProps = {
-  value: PropTypes.string;
-  children: PropTypes.node;
-  isError: PropTypes.bool;
-  hasStartAdornment: PropTypes.bool;
-  hasLabel: PropTypes.bool;
-  className?: PropTypes.string;
+  value: string;
+  children: ReactNode;
+  isError: boolean;
+  hasStartAdornment: boolean;
+  hasLabel: boolean;
+  className?: string;
 };
 type FormLabelProps = {
-  shrink?: PropTypes.bool;
-  children: PropTypes.node;
+  shrink?: boolean;
+  children: ReactNode;
 };
 export { FormLabelProps };
 export default FormControllerProps;

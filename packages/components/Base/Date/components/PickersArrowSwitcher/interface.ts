@@ -1,14 +1,14 @@
-import { PropTypes } from 'prop-types';
+import { ReactNode } from 'react';
 
 interface PickersArrowSwitcherProps {
   className?: string;
-  isLeftDisabled?: PropTypes.bool;
-  isRightDisabled?: PropTypes.bool;
-  onLeftClick?: PropTypes.func;
-  onRightClick?: PropTypes.func;
-  children?: PropTypes.node;
-  leftBtnHidden?: PropTypes.bool;
-  rightBtnHidden?: PropTypes.bool;
+  isLeftDisabled?: boolean;
+  isRightDisabled?: boolean;
+  onLeftClick?: Function;
+  onRightClick?: Function;
+  children?: ReactNode;
+  leftBtnHidden?: boolean;
+  rightBtnHidden?: boolean;
 }
 
 export { PickersArrowSwitcherProps };

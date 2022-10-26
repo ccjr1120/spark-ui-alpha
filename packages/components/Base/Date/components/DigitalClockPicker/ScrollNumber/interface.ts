@@ -1,14 +1,14 @@
-import { PropTypes } from 'prop-types';
+import { ReactNode } from "react";
 
 interface ScrollNumberProps {
-  start?: PropTypes.number;
-  end: PropTypes.number;
+  start?: number;
+  end: number;
 }
 
 interface ScrollNumberItemProps {
-  height: PropTypes.number;
-  children: PropTypes.node;
-  active: PropTypes.bool;
+  height: number;
+  children: ReactNode;
+  active: boolean;
 }
 
 export { ScrollNumberProps, ScrollNumberItemProps };

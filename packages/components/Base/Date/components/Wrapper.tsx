@@ -1,13 +1,12 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import PickersPopper from './PickersPopper';
 
 interface WrapperProps {
-  children: PropTypes.node;
-  KeyboardDateInputComponent: PropTypes.node;
+  children: any;
+  KeyboardDateInputComponent: any;
   inputProps: any;
-  showPopper: PropTypes.bool;
-  togglePopper: PropTypes.func;
+  showPopper: boolean;
+  togglePopper: Function;
 }
 
 function Wrapper(props: WrapperProps) {
@@ -30,7 +29,7 @@ function Wrapper(props: WrapperProps) {
           anchorEl={anchorEl}
           pickerEl={pickerRef}
           open={showPopper}
-          onClose={togglePopper}
+          onClose={() => { togglePopper() }}
         >
           {React.cloneElement(children, { ref: pickerRef })}
         </PickersPopper>

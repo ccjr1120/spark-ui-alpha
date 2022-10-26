@@ -16,8 +16,8 @@ const KeyboardRangeDateInput = forwardRef((props, ref) => {
 });
 
 KeyboardRangeDateInput.propTypes = {
-  renderInput: PropTypes.func.isRequired,
-  togglePopper: PropTypes.func.isRequired,
+  renderInput: Function.isRequired,
+  togglePopper: Function.isRequired,
   startProps: PropTypes.objectOf(PropTypes.any),
   endProps: PropTypes.objectOf(PropTypes.any),
 };

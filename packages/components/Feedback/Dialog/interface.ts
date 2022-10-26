@@ -2,16 +2,16 @@ import { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
 type DialogProps = {
-  open: PropTypes.bool;
+  open: boolean;
   title: ReactNode;
   children: ReactNode;
-  showCloseBtn?: PropTypes.bool;
-  showFooter?: PropTypes.bool;
-  showCancelBtn?: PropTypes.bool;
-  showConfirmBtn?: PropTypes.bool;
-  onClose?: PropTypes.func;
-  onCancel?: PropTypes.func;
-  onConfirm?: PropTypes.func;
+  showCloseBtn?: boolean;
+  showFooter?: boolean;
+  showCancelBtn?: boolean;
+  showConfirmBtn?: boolean;
+  onClose?: Function;
+  onCancel?: Function;
+  onConfirm?: Function;
 };
 
 export default DialogProps;

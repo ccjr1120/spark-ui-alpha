@@ -3,17 +3,17 @@ import { PropTypes } from 'prop-types';
 interface DateRangePickerItemProps {
   date: any;
   label: number | string;
-  isStartDate: PropTypes.bool;
-  isEndDate: PropTypes.bool;
-  hasEndDate: PropTypes.bool;
-  isInRange: PropTypes.bool;
-  onFocusedDayChange: PropTypes.func;
-  isActive: PropTypes.bool;
-  isHoverDate: PropTypes.bool;
+  isStartDate: boolean;
+  isEndDate: boolean;
+  hasEndDate: boolean;
+  isInRange: boolean;
+  onFocusedDayChange: Function;
+  isActive: boolean;
+  isHoverDate: boolean;
   borderRadius: any;
   sidesBorder: any;
-  innerRadius: PropTypes.string;
-  height: PropTypes.number;
+  innerRadius: string;
+  height: number;
 }
 
 export { DateRangePickerItemProps };

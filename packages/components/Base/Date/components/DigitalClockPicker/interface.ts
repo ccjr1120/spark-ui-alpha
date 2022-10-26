@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
 type DigitalClockPickerProps = {
-  view: PropTypes.string;
+  view: string;
   views: Array<string>;
   date: any;
-  onChange: PropTypes.func;
-  onViewChange: PropTypes.func;
+  onChange: Function;
+  onViewChange: Function;
 };
 interface DigitalClockProps {
   date?: any;

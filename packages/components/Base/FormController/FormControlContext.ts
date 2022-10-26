@@ -7,8 +7,8 @@ export interface FormControlContextType {
   filled: boolean;
   hasStartAdornment: boolean;
   focused: boolean;
-  onFocus: PropTypes.func;
-  onBlur: PropTypes.func;
+  onFocus: Function;
+  onBlur: Function;
 }
 
 const FormControlContext = React.createContext<FormControlContextType | null>(

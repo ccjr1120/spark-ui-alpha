@@ -1,11 +1,10 @@
-import { forwardRef } from 'react';
-import PropTypes from 'prop-types';
+import { forwardRef, ReactNode } from 'react';
 
 interface KeyboardDateInputProps {
-  togglePopper: PropTypes.func;
-  renderInput: PropTypes.node;
-  value: PropTypes.string;
-  inputType: PropTypes.string;
+  togglePopper: Function;
+  renderInput: Function;
+  value: string;
+  inputType: string;
 }
 
 const KeyboardDateInput = forwardRef((props: KeyboardDateInputProps, ref) => {

@@ -1,42 +1,42 @@
 import PropTypes from 'prop-types';
 
 type CalendarPickerProps = {
-  view: PropTypes.string;
+  view: string;
   views: Array<string>;
   date: any;
-  onChange: PropTypes.func;
-  onViewChange: PropTypes.func;
+  onChange: Function;
+  onViewChange: Function;
 };
 
 interface DayPickerProps {
-  value?: PropTypes.number;
+  value?: number;
   date: any;
-  onChange: PropTypes.func;
-  renderDay?: PropTypes.func;
+  onChange: Function;
+  renderDay?: Function;
 }
 
 interface MonthPickerProps {
   date: any;
-  onChange: PropTypes.func;
-  renderMonth: PropTypes.func;
+  onChange: Function;
+  renderMonth: Function;
 }
 
 interface YearPickerProps {
   date: any;
-  onChange: PropTypes.func;
-  renderYear?: PropTypes.func;
+  onChange: Function;
+  renderYear?: Function;
 }
 interface QuarterPickerProps {
   date: any;
-  onChange: PropTypes.func;
-  renderQuarter?: PropTypes.func;
+  onChange: Function;
+  renderQuarter?: Function;
 }
 interface PickersCalendarHeaderProps {
-  openView: PropTypes.string;
+  openView: string;
   date: any;
   views: Array<string>;
-  onViewChange: PropTypes.func;
-  onMonthChange: PropTypes.func;
+  onViewChange: Function;
+  onMonthChange: Function;
 }
 export {
   CalendarPickerProps,

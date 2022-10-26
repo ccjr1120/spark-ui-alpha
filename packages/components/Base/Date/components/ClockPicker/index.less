@@ -1,3 +1,10 @@
+@import url('../../../../node_modules/@spark-ui/theme-chalk/styles/var.less');
+
+.spark-clock-picker{
+  --spark-clock-pointer-color: @primary-color;
+  --spark-color-active-number: @primary-color;
+}
+
 .spark-clock-picker {
   position: relative;
   padding: 16px;
@@ -32,7 +39,7 @@
     top: 50%;
     width: 10px;
     height: 10px;
-    background: blue;
+    background: var(--spark-clock-pointer-color);
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
@@ -52,7 +59,7 @@
     left: calc(50% - 1px);
     bottom: 50%;
     width: 2px;
-    background: blue;
+    background: var(--spark-clock-pointer-color);
     transform-origin: center bottom;
   }
   .spark-clock__pointer-center {

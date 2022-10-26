@@ -353,11 +353,11 @@ const DateRangePickerView = forwardRef(
 );
 
 DateRangePickerView.propTypes = {
-  view: PropTypes.string,
+  view: string,
   date: PropTypes.arrayOf(PropTypes.object),
-  calendars: PropTypes.number,
-  openDateType: PropTypes.string,
-  onChange: PropTypes.func,
+  calendars: number,
+  openDateType: string,
+  onChange: Function,
 };
 
 export default DateRangePickerView;

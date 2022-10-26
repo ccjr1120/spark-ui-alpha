@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types';
 import DatePicker from './DatePicker';
 import TimePicker from './TimePicker';
 import DateTimePicker from './DateTimePicker';
 import DateRangePicker from './DateRangePicker';
 
 interface DateProps {
-  type: PropTypes.string;
+  type: string;
 }
 
 function Date({ type, ...others }: DateProps) {
