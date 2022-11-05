@@ -1,5 +1,3 @@
-import { css } from '@emotion/react';
-
 // 这是单元格边框的默认样式,悬浮和选中的样式调整在DateRangePickerItem中
 export const getBorderRadiusStyle = ({
   dateType,
@@ -47,23 +45,22 @@ export const getBorderRadiusStyle = ({
     }
   }
   if (borderRadiusFlag === 1) {
-    return css`
-      border-top-left-radius: ${radius};
-      border-bottom-left-radius: ${radius};
-    `;
+    return {
+      borderTopLeftRadius: radius,
+      borderBottomLeftRadius: radius
+    }
   }
   if (borderRadiusFlag === 2) {
-    return css`
-      border-top-right-radius: ${radius};
-      border-bottom-right-radius: ${radius};
-    `;
+    return {
+      borderTopRightRadius: radius,
+      borderBottomRightRadius: radius
+    };
   }
   if (borderRadiusFlag === 3) {
-    return css`
-      border-radius: ${radius};
-    `;
+    return { borderRadius: radius }
+
   }
-  return css``;
+  return {};
 };
 // 当该日期处在选择范围内时，且endDate为空是，左右边框的表现
 export const getSidesBorderStyle = ({
@@ -75,7 +72,7 @@ export const getSidesBorderStyle = ({
   borderColor,
 }) => {
   if (!isInRange || hasEndDate) {
-    return css``;
+    return {};
   }
   let borderFlag = 0;
   if (dateType === 'day') {
@@ -110,19 +107,19 @@ export const getSidesBorderStyle = ({
     }
   }
   if (borderFlag === 1) {
-    return css`
-      border-left-color: ${borderColor};
-    `;
+    return {
+      borderLeftColor: borderColor
+    };
   }
   if (borderFlag === 2) {
-    return css`
-      border-right-color: ${borderColor};
-    `;
+    return {
+      borderRightColor: borderColor
+    };
   }
   if (borderFlag === 3) {
-    return css`
-      border-color: ${borderColor};
-    `;
+    return {
+      borderColor: borderColor
+    }
   }
-  return css``;
+  return {};
 };

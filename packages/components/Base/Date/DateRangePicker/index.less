@@ -1,0 +1,31 @@
+@import url('../../../node_modules/@spark-ui/theme-chalk/styles/var.less');
+
+.spark-date-range-picker__arrow-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.spark-date-range-picker-view {
+    display: flex;
+    background: @color-white;
+
+    >div:not(:last-of-type) {
+        border-right: 2px solid @color-gray;
+    }
+}
+
+.spark-date-range-picker-view__calendar--wrap {
+    width: 400px;
+}
+
+.spark-date-range-picker-view__date-label {
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+}
+
+.spark-date-range-picker-view__date-content {
+    flex: 1;
+}

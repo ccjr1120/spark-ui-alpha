@@ -1,6 +1,7 @@
-import { useNamespace } from '@spark-ui/hooks';
+import { useClassName, useNamespace } from '@spark-ui/hooks';
 import dayjs from 'dayjs/esm/index';
 import { DateRangePickerItemProps } from './interface';
+import './index.less'
 
 function DateRangePickerItem(props: DateRangePickerItemProps) {
   const {
@@ -19,50 +20,29 @@ function DateRangePickerItem(props: DateRangePickerItemProps) {
     ...others
   } = props;
   const ns = useNamespace('date-range-picker-item');
-  // const actionDayStyle = css`
-  //   background-color: ${getColor('blue')} !important;
-  //   color: ${getColor('white')};
-  //   border: none;
-  // `;
+  const wrapperCls = useClassName([
+    ns.m('wrapper'),
+    ns.useIs('select-range', isInRange && !hasEndDate),
+    ns.useIs('selected-range', isInRange && hasEndDate)
+  ]);
+  const contentCls = useClassName([
+    ns.e('content'),
+    ns.useIs('today', dayjs().isSame(date, 'day')),
+    ns.useIs('active', isStartDate || isEndDate)
+  ])
+  
   return (
     <div
-      // css={css`
-      //   overflow: hidden;
-      //   height: ${height / FONT_BASE}rem;
-      //   color: ${getColor('gray-black-6')};
-      //   border: 1px dashed transparent;
-      //   ${borderRadius}
-      //   ${sidesBorder}
-      //   ${isInRange &&
-      //   !hasEndDate &&
-      //   `border-top-color:${getColor('gray-black-6')};
-      //     border-bottom-color:${getColor('gray-black-6')};
-      //     `}
-      //   ${isInRange && hasEndDate && 'background:rgba(66, 165, 245, 0.4);'}
-      // `}
-      className={ns.m('wrapper')}
+      style={{ height: `${height}px;`, ...borderRadius, ...sidesBorder }}
+      className={wrapperCls}
       onMouseMove={() => {
         onFocusedDayChange(date);
       }}
       {...others}
     >
       <div
-        // css={css`
-        //   height: 100%;
-        //   width: 100%;
-        //   cursor: pointer;
-        //   line-height: ${height / FONT_BASE}rem;
-        //   text-align: center;
-        //   transition: 200ms;
-        //   border-radius: ${innerRadius};
-        //   :hover {
-        //     background: rgba(0, 0, 0, 0.04);
-        //   }
-        //   ${dayjs().isSame(date, 'day') &&
-        //   `border: 1px solid ${getColor('gray-black-6')};`}
-        //   ${(isStartDate || isEndDate) && actionDayStyle}
-        // `}
-        className={ns.e('content')}
+        className={contentCls}
+        style={{ borderRadius: innerRadius, lineHeight: `${height}px` }}
       >
         {label}
       </div>

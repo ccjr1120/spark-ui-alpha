@@ -16,7 +16,16 @@ const chsMonth = [
   '十一月',
   '十二月',
 ];
-export default ({ view, date, openType, calendars, onChange }) => {
+
+interface pickerDataTypes {
+  view: string,
+  date: any,
+  openType: string,
+  calendars: number,
+  onChange: Function,
+}
+
+export default ({ view, date, openType, calendars, onChange }: pickerDataTypes) => {
   // 除了day是月份，年为空之外，季度和月份都是操作年份
   const opType = view === 'day' ? 'month' : view === 'year' ? null : 'year';
   const [hoverDate, setHoverDate] = useState(null);
@@ -29,8 +38,8 @@ export default ({ view, date, openType, calendars, onChange }) => {
     openType === 'start'
       ? date[0] ?? dayjs()
       : date[1]
-      ? date[1].add(-calendars + 1, opType)
-      : dayjs().add(-calendars + 1, opType)
+        ? date[1].add(-calendars + 1, opType)
+        : dayjs().add(-calendars + 1, opType)
   );
   const goNextDate = () => {
     setOpDate((preDate) => preDate.add(1, opType));
@@ -40,9 +49,8 @@ export default ({ view, date, openType, calendars, onChange }) => {
   };
   const getDateOpLabel = (index) => {
     const newDate = opDate.add(index, opType);
-    return `${
-      opType === 'month' ? chsMonth[newDate.month()] : ''
-    }  ${newDate.year()}年`;
+    return `${opType === 'month' ? chsMonth[newDate.month()] : ''
+      }  ${newDate.year()}年`;
   };
   /**
    * 这里的逻辑比mui里面简单很多，不处理那些复杂的情况了

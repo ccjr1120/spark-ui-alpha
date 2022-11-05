@@ -1,5 +1,3 @@
-import { PropTypes } from 'prop-types';
-
 interface DateRangePickerItemProps {
   date: any;
   label: number | string;

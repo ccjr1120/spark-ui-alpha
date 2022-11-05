@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { times } from 'lodash';
 import { useMemo } from 'react';
 import { useNamespace } from '@spark-ui/hooks';

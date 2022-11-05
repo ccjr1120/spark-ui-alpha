@@ -1,8 +1,4 @@
-import { forwardRef } from 'react';
-import PropTypes from 'prop-types';
-import { css } from '@emotion/react';
 import { times } from 'lodash';
-import useColor from 'hooks/useColor';
 import PickersArrowSwitcher from '../components/PickersArrowSwitcher';
 import useRangePickerData from './useRangePickerData';
 import DayPicker from '../components/CalendarPicker/DayPicker';
@@ -11,24 +7,24 @@ import DateRangePickerItem from '../components/DateRangePickerItem';
 import MonthPicker from '../components/CalendarPicker/MonthPicker';
 import { getBorderRadiusStyle, getSidesBorderStyle } from './helper';
 import QuarterPicker from '../components/CalendarPicker/QuarterPicker';
+import { DateRangePickerViewProps } from './interface';
+import { useNamespace } from '@spark-ui/hooks';
+import './index.less'
+
 
 function DateRangePickerArrowSwitcher({ ...others }) {
   return (
     <PickersArrowSwitcher
-      css={css`
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: ${16 / FONT_BASE}rem;
-      `}
+      className='spark-date-range-picker__arrow-switcher'
       {...others}
     />
   );
 }
 
-const DateRangePickerView = forwardRef(
-  ({ view, date, calendars, openDateType, onChange, ...others }, ref) => {
-    const getColor = useColor();
+const DateRangePickerView =
+  (props: DateRangePickerViewProps) => {
+    const { view, date, calendars, openDateType, onChange, ...others } = props;
+    const ns = useNamespace('date-range-picker-view');
     const {
       opDate,
       opType,
@@ -44,27 +40,18 @@ const DateRangePickerView = forwardRef(
       view,
       date,
       calendars,
-      openDateType,
+      openType: openDateType,
       onChange,
     });
     return (
       <div
-        ref={ref}
-        css={css`
-          display: flex;
-          background: ${getColor('white-6')};
-          > div:not(:last-of-type) {
-            border-right: 2px solid ${getColor('gray-1')};
-          }
-        `}
+        className={ns.b()}
         {...others}
       >
         {times(calendars).map((index) => (
           <div
             key={index}
-            css={css`
-              width: ${400 / FONT_BASE}rem;
-            `}
+            className={ns.e('calendar--wrap')}
           >
             {view !== 'year' && (
               <DateRangePickerArrowSwitcher
@@ -74,20 +61,14 @@ const DateRangePickerView = forwardRef(
                 onRightClick={goNextDate}
               >
                 <div
-                  css={css`
-                    font-weight: 550;
-                    display: flex;
-                    align-items: center;
-                  `}
+                  className={ns.e('date-label')}
                 >
                   {getDateOpLabel(index)}
                 </div>
               </DateRangePickerArrowSwitcher>
             )}
             <div
-              css={css`
-                flex: 1;
-              `}
+              className={ns.e('date-content')}
             >
               {view === 'day' && (
                 <DayPicker
@@ -99,9 +80,9 @@ const DateRangePickerView = forwardRef(
                       dayDate.isBetween(
                         selectStartDate,
                         selectEndDate ||
-                          (hoverDate?.isAfter(selectStartDate, 'day')
-                            ? hoverDate
-                            : selectStartDate),
+                        (hoverDate?.isAfter(selectStartDate, 'day')
+                          ? hoverDate
+                          : selectStartDate),
                         'day',
                         '[]'
                       );
@@ -119,14 +100,14 @@ const DateRangePickerView = forwardRef(
                       isEndDate,
                       isHoverDate,
                     });
-                    const borderColor = getColor('gray-black-6');
+                    const borderColor = '#666';
                     const sidesBorderStyle = getSidesBorderStyle({
                       dateType: 'day',
                       date: dayDate,
                       isInRange,
                       hasEndDate,
                       isHoverDate,
-                      borderColor,
+                      borderColor
                     });
                     return (
                       <DateRangePickerItem
@@ -158,9 +139,9 @@ const DateRangePickerView = forwardRef(
                       monthDate.isBetween(
                         selectStartDate,
                         selectEndDate ||
-                          (hoverDate?.isAfter(selectStartDate, 'month')
-                            ? hoverDate
-                            : selectStartDate),
+                        (hoverDate?.isAfter(selectStartDate, 'month')
+                          ? hoverDate
+                          : selectStartDate),
                         'day',
                         '[]'
                       );
@@ -181,7 +162,7 @@ const DateRangePickerView = forwardRef(
                       isEndDate,
                       isHoverDate,
                     });
-                    const borderColor = getColor('gray-black-6');
+                    const borderColor = '#666';
                     const sidesBorderStyle = getSidesBorderStyle({
                       dateType: 'month',
                       date: monthDate,
@@ -220,9 +201,9 @@ const DateRangePickerView = forwardRef(
                       quarterDate.isBetween(
                         selectStartDate,
                         selectEndDate ||
-                          (hoverDate?.isAfter(selectStartDate, 'quarter')
-                            ? hoverDate
-                            : selectStartDate),
+                        (hoverDate?.isAfter(selectStartDate, 'quarter')
+                          ? hoverDate
+                          : selectStartDate),
                         'day',
                         '[]'
                       );
@@ -249,7 +230,7 @@ const DateRangePickerView = forwardRef(
                       isEndDate,
                       isHoverDate,
                     });
-                    const borderColor = getColor('gray-black-6');
+                    const borderColor = '#666';
                     const sidesBorderStyle = getSidesBorderStyle({
                       dateType: 'quarter',
                       date: quarterDate,
@@ -280,9 +261,6 @@ const DateRangePickerView = forwardRef(
               )}
               {view === 'year' && (
                 <YearPicker
-                  css={css`
-                    padding-top: ${16 / FONT_BASE}rem;
-                  `}
                   date={opDate}
                   renderYear={(year) => {
                     const { date: yearDate } = year;
@@ -291,9 +269,9 @@ const DateRangePickerView = forwardRef(
                       yearDate.isBetween(
                         selectStartDate,
                         selectEndDate ||
-                          (hoverDate?.isAfter(selectStartDate, 'year')
-                            ? hoverDate
-                            : selectStartDate),
+                        (hoverDate?.isAfter(selectStartDate, 'year')
+                          ? hoverDate
+                          : selectStartDate),
                         'day',
                         '[]'
                       );
@@ -314,7 +292,7 @@ const DateRangePickerView = forwardRef(
                       isEndDate,
                       isHoverDate,
                     });
-                    const borderColor = getColor('gray-black-6');
+                    const borderColor = '#666';
                     const sidesBorderStyle = getSidesBorderStyle({
                       dateType: 'year',
                       date: yearDate,
@@ -349,15 +327,6 @@ const DateRangePickerView = forwardRef(
         ))}
       </div>
     );
-  }
-);
-
-DateRangePickerView.propTypes = {
-  view: string,
-  date: PropTypes.arrayOf(PropTypes.object),
-  calendars: number,
-  openDateType: string,
-  onChange: Function,
-};
+  };
 
 export default DateRangePickerView;

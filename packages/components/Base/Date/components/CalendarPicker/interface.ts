@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 type CalendarPickerProps = {
   view: string;
   views: Array<string>;
@@ -11,24 +9,24 @@ type CalendarPickerProps = {
 interface DayPickerProps {
   value?: number;
   date: any;
-  onChange: Function;
+  onChange?: Function;
   renderDay?: Function;
 }
 
 interface MonthPickerProps {
   date: any;
-  onChange: Function;
+  onChange?: Function;
   renderMonth: Function;
 }
 
 interface YearPickerProps {
   date: any;
-  onChange: Function;
+  onChange?: Function;
   renderYear?: Function;
 }
 interface QuarterPickerProps {
   date: any;
-  onChange: Function;
+  onChange?: Function;
   renderQuarter?: Function;
 }
 interface PickersCalendarHeaderProps {

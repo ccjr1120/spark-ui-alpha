@@ -1,21 +1,20 @@
-import useToggle from 'hooks/useToggle';
 import { useMemo, useState } from 'react';
 import dayjs from 'dayjs/esm/index';
-import { css } from '@emotion/react';
-import PropTypes from 'prop-types';
 import Wrapper from '../components/Wrapper';
 import KeyboardRangeDateInput from './KeyboardRangeDateInput';
 import Input from '../../Input';
-import BasePropTypes from '../types/BasePropTypes';
 import DateRangePickerView from './DateRangePickerView';
+import './index.less'
+import { DateRangePickerProps } from './interface';
+import isBetween from 'dayjs/plugin/isBetween'
 
-const renderInputDefault = ({ ref, startProps, endProps, ...others }) => (
+dayjs.extend(isBetween);
+
+const renderInputDefault = ({ ref, startProps, endProps, togglePopper, ...others }) => (
   <div
     ref={ref}
-    css={css`
-      display: inline-flex;
-      align-items: center;
-    `}
+    style={{ display: 'inline-flex', alignItems: 'center' }}
+    onClick={togglePopper}
     {...others}
   >
     <Input {...startProps} />
@@ -27,7 +26,7 @@ const renderInputDefault = ({ ref, startProps, endProps, ...others }) => (
  * 分别支持选择年、月、季度、日的日期范围选择器,由view指定
  * 返回结果的干净程度由提供的valueFormat决定，因为即使只指定了月或年的时候，最后的值依旧是完整的日期
  */
-function DateRangePicker(props) {
+function DateRangePicker(props: DateRangePickerProps) {
   const {
     label,
     value,
@@ -49,7 +48,10 @@ function DateRangePicker(props) {
     inputType: 'date',
     renderInput: renderInput || renderInputDefault,
   };
-  const [showPopper, setShowPopper] = useToggle(false);
+  const [showPopper, setShowPopper] = useState(false);
+  const togglePopper = () => {
+    setShowPopper((v) => !v);
+  };
   const date = useMemo(
     () =>
       value && value.length === 2
@@ -67,7 +69,7 @@ function DateRangePicker(props) {
   return (
     <Wrapper
       showPopper={showPopper}
-      togglePopper={setShowPopper}
+      togglePopper={togglePopper}
       inputProps={inputProps}
       KeyboardDateInputComponent={KeyboardRangeDateInput}
     >
@@ -77,12 +79,5 @@ function DateRangePicker(props) {
     </Wrapper>
   );
 }
-
-DateRangePicker.propTypes = {
-  ...BasePropTypes,
-  view: string,
-  calendars: number,
-  value: PropTypes.arrayOf(string),
-};
 
 export default DateRangePicker;
